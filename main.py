@@ -20,6 +20,10 @@ def main():
             print("Strength:", strength)
             for f in feedback:
                 print("-", f)
+                save = input("Do you want to save this password? (y/n): ").lower()
+if save == "y":
+    pm.save_password(pwd)
+    print("Password saved securely.")
 
         elif choice == "2":
             pwd = pm.generate_password()
@@ -32,6 +36,10 @@ def main():
             base = input("Enter base password: ")
             strong = pm.strengthen_password(base)
             print("Stronger version:", strong)
+            save = input("Do you want to save this password? (y/n): ").lower()
+if save == "y":
+    pm.save_password(strong)
+    print("Password saved securely.")
 
         elif choice == "4":
             print("Stored Passwords:")
